@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+
+    <title>Projeto FInal JS Coderhouse</title>
+  </head>
+  
+  <body>
+
+    <header class="cabecalho">
+      <nav id="cabecalho-menu">
+        <p id="texto-menu">Sua doação salvará vidas, doe agora ou torne-se um benfeitor!</p>
+        <ul id="menu-lista">
+          <li class="menu-lista"><a href="#" class="link-menu">porque doar?</a></li>
+          <li class="menu-lista"><a href="#" class="link-menu">torne-se um benfeitor</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="section1">
+        <div id="doacao">
+          <p id="periodoDoacao-p">Escolha sua contribuição:</p>
+          <div id="periodoDoacao">
+            <select name="periodoDoacao" id="periodo">
+              <option value="mensal">Mensal</option>
+              <option value="anual">Única</option>
+            </select>
+          </div>
+          <div id="valorDoacao">
+            <button type="button" class="valores">R$15</button>
+            <button type="button" class="valores">R$20</button>
+            <button type="button" class="valores">R$30</button>
+            <button type="button" class="valores">R$50</button>
+            <button type="button" class="valores">R$60</button>
+            <button type="button" class="valores">R$100</button>
+          </div>
+          <div id="outroValor">
+            <p id="outroValor-p">Outro valor:</p>
+            <input type="number" id="outroValor-input" placeholder="R$">
+            <button type="button" id="enviarDoacao">Doar agora!</button>
+          </div>
+        </div>
+    </section>
+
+    <footer class="rodape">
+      <p id="texto-rodape">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet deleniti expedita vitae placeat, fuga tempore, earum architecto sequi unde dolorum magni cupiditate reiciendis eaque incidunt, nam molestias id vel quis!</p>
+    </footer>
+
+  </body>
+</html>
