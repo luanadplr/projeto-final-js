@@ -36,17 +36,18 @@
             </select>
           </div>
           <div id="valorDoacao">
-            <button type="button" class="valores">R$15</button>
-            <button type="button" class="valores">R$20</button>
-            <button type="button" class="valores">R$30</button>
-            <button type="button" class="valores">R$50</button>
-            <button type="button" class="valores">R$60</button>
-            <button type="button" class="valores">R$100</button>
+            <button type="button" class="valores" onclick="selecionarValor(15)">R$15</button>
+            <button type="button" class="valores" onclick="selecionarValor(20)">R$20</button>
+            <button type="button" class="valores" onclick="selecionarValor(30)">R$30</button>
+            <button type="button" class="valores" onclick="selecionarValor(50)">R$50</button>
+            <button type="button" class="valores" onclick="selecionarValor(60)">R$60</button>
+            <button type="button" class="valores" onclick="selecionarValor(100)">R$100</button>
           </div>
           <div id="outroValor">
             <p id="outroValor-p">Outro valor:</p>
             <input type="number" id="outroValor-input" placeholder="R$">
-            <button type="button" id="enviarDoacao">Doar agora!</button>
+            <button type="button" id="enviarDoacao" onclick="doar()">Doar agora!</button>
+            <div id="mensagemAgradecimento" class="mensagem-agradecimento"></div>
           </div>
         </div>
     </section>
@@ -55,5 +56,6 @@
       <p id="texto-rodape">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet deleniti expedita vitae placeat, fuga tempore, earum architecto sequi unde dolorum magni cupiditate reiciendis eaque incidunt, nam molestias id vel quis!</p>
     </footer>
 
+    <script src="./main.js"></script>
   </body>
 </html>
