@@ -1,16 +1,35 @@
 :root{
-font-family: 'Roboto', sans-serif;
-font-size: 16px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+
 }
+
+html {
+    scroll-behavior: smooth;
+}
+  
+:target {
+    scroll-margin-top: .8em;
+}
+
+#pagina-principal-secao1{
+
+    background-image: url("img/page-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
 
 /*    CABEÇALHO            */ 
 
 .cabecalho{
  
-    background-color: white;
     width: 100%;
-    height: 3em;
+    height: 0.01em;
     font-size:12px;
+    padding-top: 20px;
 
 }
 
@@ -18,26 +37,9 @@ font-size: 16px;
     
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 3em;
 
-}
-
-#texto-menu{
-    
-    font-weight: 700;
-    color: red;
-    text-transform: uppercase;
-    margin-left: 30px;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: digitacao 3s 1s infinite;
-
-}
-
-@keyframes digitacao{
-    from{width: 0;}
-    to{width: 50em;}
 }
   
 
@@ -49,31 +51,77 @@ font-size: 16px;
     
 }
 
-.menu-lista{padding: 20px; text-transform: uppercase;}
-.link-menu{text-decoration: none;
-color: rgb(123, 123, 123);}
-.link-menu:hover{text-decoration:underline; opacity: 70%;}
+.menu-li{
+
+    padding: 20px;
+    text-transform: uppercase;
+
+}
+
+.link-menu{
+
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+    background-color: yellow;
+    font-weight: 700;
+
+}
+
+.link-menu:hover{
+
+    color: black;
+    background: none;
+    border-bottom: 3px solid yellow;
+
+}
 
 
 /*  MAIN          */
 
 .section1{
-    background-image: url("./img/page-bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 50em;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
-    'div' 'none';
+    'texto div';
+    align-items: center;
+    justify-items: center;
+    
+}
+
+#texto-principal{
+
+    grid-area: texto;
+    text-align: justify;
+
+}
+
+#h2-principal{
+
+    font-size: 500%;
+    font-weight: 700;
+    color: black;
+    text-decoration-line: underline;
+    text-decoration-thickness: 10px;
+    text-decoration-color: yellow;
+    transition: background 1s, color 1s;
+
+}
+
+#h2-principal:hover{
+
+    background-color: yellow;
+    color: black;
+
 }
 
 #doacao{
 
     grid-area: div;
-    background-color: rgba(0, 0, 0, 0.173);
+    background-color: rgba(0, 0, 0, 0.742);
     border-radius: 7px;
-    margin: 150px 0 50px 100px;
+    /* margin: 150px 0 50px 100px; */
     width: 25em;
     height: 30em;
 
@@ -179,23 +227,137 @@ color: rgb(123, 123, 123);}
 
 }
 
+.mensagem-agradecimento {
+    display: none; /* Inicialmente, oculta a mensagem */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/*  SECTION 2     */
+
+#pagina-principal-secao2{
+
+    height: 10em;
+    width: 100%;
+    background-color: yellow;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.h2-quadros{
+
+    display: inline-block;
+    font-weight: 700;
+    font-size: 25px;
+    padding-left: 20px;
+
+}
+
+.icon-quadros{
+
+    height: 50px;
+
+}
+
+/*  SECTION 3     */
+
+#pagina-principal-secao3{
+
+    height: 20em;
+    padding: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#secao3-ctn1{
+
+    width: 50%;
+
+}
+
+
+#p-secao3{
+
+    opacity: 60%;
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+
+}
+
+#texto-secao3{
+
+    padding-top: 10px;
+    width: 55%;
+    text-align: justify;
+
+}
+
+strong{font-weight: 700;}
+
+#seja-voluntario{
+
+    text-decoration: none;
+    
+}
+
+#txt-seja-voluntario{
+
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    color: black;
+    border-bottom: 5px solid yellow;
+    margin-top: 80px;
+
+}
+
+#seja-voluntario:hover{background-color: yellow;}
+
+.infos-secao3{
+
+    background-color: yellow;
+    border-radius: 5px;
+    padding: 30px;
+    margin-top: 10px;
+
+}
+
+.underline{
+
+    background:none;
+    border: thin solid yellow;
+
+}
+
+
 /*  RODAPÉ      */
 
 .rodape{
     background-color: rgb(229, 229, 229);
     width: 100%;
-    height: 5em;
+    height: 8em;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-areas: 
-    'texto' 'none';
+    'texto .';
 }
 
 #texto-rodape{
 
     grid-area: texto;
     font-size: 12px;
-    margin: 20px;
+    margin: 30px;
     opacity: 60%;
 
 }
@@ -203,18 +365,10 @@ color: rgb(123, 123, 123);}
 /*   RESPONSIVIDADE     */
 
 @media only screen and (min-width:0) and (max-width:912px){
-    #menu-lista{display: none;}
-    #cabecalho-menu{justify-content: center;}
-    @keyframes digitacao{
-        from{width: 0;}
-        to{width: 35em;}
-    }
-
-    .section1{
-
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-        "div";
-
-    }
+   .section1{
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    'texto'
+    'div';
+   }
 }

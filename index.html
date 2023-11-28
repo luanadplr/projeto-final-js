@@ -11,51 +11,74 @@
     />
     <link rel="stylesheet" href="./index.css" />
 
-    <title>Projeto FInal JS Coderhouse</title>
+    <title>Educar para libertar!</title>
   </head>
   
   <body>
-
-    <header class="cabecalho">
-      <nav id="cabecalho-menu">
-        <p id="texto-menu">Sua doação salvará vidas, doe agora ou torne-se um benfeitor!</p>
-        <ul id="menu-lista">
-          <li class="menu-lista"><a href="#" class="link-menu">porque doar?</a></li>
-          <li class="menu-lista"><a href="#" class="link-menu">torne-se um benfeitor</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="section1">
-        <div id="doacao">
-          <p id="periodoDoacao-p">Escolha sua contribuição:</p>
-          <div id="periodoDoacao">
-            <select name="periodoDoacao" id="periodo">
-              <option value="mensal">Mensal</option>
-              <option value="anual">Única</option>
-            </select>
+   <div id="pagina-principal-secao1">
+      <header class="cabecalho">
+        <nav id="cabecalho-menu">
+          <!-- <p id="texto-menu">Sua doação salvará vidas, doe agora ou torne-se um benfeitor!</p> -->
+          <ul id="menu-lista">
+            <li class="menu-li"><a href="#pagina-principal-secao3" class="link-menu">porque doar?</a></li>
+            <li class="menu-li"><a href="#" target="_blank" class="link-menu">seja um voluntário</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="section1">
+          <div id="texto-principal">
+            <h2 id="h2-principal">Educar<br>para libertar!</h2>
           </div>
-          <div id="valorDoacao">
-            <button type="button" class="valores" onclick="selecionarValor(15)">R$15</button>
-            <button type="button" class="valores" onclick="selecionarValor(20)">R$20</button>
-            <button type="button" class="valores" onclick="selecionarValor(30)">R$30</button>
-            <button type="button" class="valores" onclick="selecionarValor(50)">R$50</button>
-            <button type="button" class="valores" onclick="selecionarValor(60)">R$60</button>
-            <button type="button" class="valores" onclick="selecionarValor(100)">R$100</button>
+          <div id="doacao">
+            <p id="periodoDoacao-p">Escolha sua contribuição:</p>
+            <div id="periodoDoacao">
+              <select name="periodoDoacao" id="periodo">
+                <option value="mensal">Mensal</option>
+                <option value="anual">Única</option>
+              </select>
+            </div>
+            <div id="valorDoacao">
+              <button type="button" class="valores" onclick="selecionarValor(15)">R$15</button>
+              <button type="button" class="valores" onclick="selecionarValor(20)">R$20</button>
+              <button type="button" class="valores" onclick="selecionarValor(30)">R$30</button>
+              <button type="button" class="valores" onclick="selecionarValor(50)">R$50</button>
+              <button type="button" class="valores" onclick="selecionarValor(60)">R$60</button>
+              <button type="button" class="valores" onclick="selecionarValor(100)">R$100</button>
+            </div>
+            <div id="outroValor">
+              <p id="outroValor-p">Outro valor:</p>
+              <input type="number" id="outroValor-input" placeholder="R$">
+              <button type="button" id="enviarDoacao" onclick="doar()">Doar agora!</button>
+              <div id="mensagemAgradecimento" class="mensagem-agradecimento"></div>
+            </div>
           </div>
-          <div id="outroValor">
-            <p id="outroValor-p">Outro valor:</p>
-            <input type="number" id="outroValor-input" placeholder="R$">
-            <button type="button" id="enviarDoacao" onclick="doar()">Doar agora!</button>
-            <div id="mensagemAgradecimento" class="mensagem-agradecimento"></div>
-          </div>
-        </div>
-    </section>
-
+      </section>
+    </div>
+    <div id="pagina-principal-secao2">
+        <container class="quadros">
+          <img src="img/icon-doacao.png" class="icon-quadros">
+          <h2 class="h2-quadros">Recebemos R$ 0,00<br>em doações.</h2>
+        </container>
+        <container class="quadros">
+          <img src="img/icon-livro.png" class="icon-quadros">
+          <h2 class="h2-quadros">Mais de 1.250 crianças<br>nas salas de aulas.</h2>
+        </container>
+    </div>
+    <div id="pagina-principal-secao3">
+      <container id="secao3-ctn1">
+        <p id="p-secao3" class="txt-secao3">Porque doar?</p>
+        <div id="texto-secao3" class="txt-secao3">A ONG <strong>Educar para Libertar!</strong> é uma organização civil, filantrópica, que promove educação integral, cultura, esportes, apoio à profissionalização, cuidados básicos de saúde e de assistência social às famílias com maior nível de desestruturação das comunidades.</div>
+        <a href="#" target="_blank" id="seja-voluntario"><p id="txt-seja-voluntario">Seja um voluntário ></p></a>
+      </container>
+      <container id="secao3-ctn2">
+        <div class="infos-secao3"><strong>39</strong> anos de assistência à Comunidade</div>
+        <div class="infos-secao3 underline"><strong>32</strong> anos de Educação Integral</div>
+        <div class="infos-secao3 underline"><strong>432</strong> vagas da Educação Infantil ao Ensino Médio</div>
+      </container>
+    </div>
     <footer class="rodape">
-      <p id="texto-rodape">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet deleniti expedita vitae placeat, fuga tempore, earum architecto sequi unde dolorum magni cupiditate reiciendis eaque incidunt, nam molestias id vel quis!</p>
+      <p id="texto-rodape">ONG ficticia criada para o projeto final do curso de Javascript da Coderhouse. Projeto sem fins lucrativos usado apenas para estudo e portfólio.</p>
     </footer>
-
     <script src="./main.js"></script>
   </body>
 </html>
