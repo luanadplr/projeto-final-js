@@ -31,24 +31,30 @@
           <div id="doacao">
             <p id="periodoDoacao-p">Ajude com sua doação:</p>
             <div id="periodoDoacao">
-              <select name="periodoDoacao" id="periodo">
-                <option value="anual">Única</option>
+              <select name="periodoDoacao" id="periodo" onchange="selecionarPeriodo()">
+                <option value="unica">Única</option>
                 <option value="mensal">Mensal</option>
               </select>
             </div>
-            <div id="valorDoacao">
-              <button type="button" class="valores" onclick="selecionarValor(15)">R$15</button>
-              <button type="button" class="valores" onclick="selecionarValor(20)">R$20</button>
-              <button type="button" class="valores" onclick="selecionarValor(30)">R$30</button>
-              <button type="button" class="valores" onclick="selecionarValor(50)">R$50</button>
-              <button type="button" class="valores" onclick="selecionarValor(60)">R$60</button>
-              <button type="button" class="valores" onclick="selecionarValor(100)">R$100</button>
+            <div id="div-doacao-unica">
+              <div id="valorDoacao">
+                <button type="button" class="valores" onclick="selecionarValor(15)">R$15</button>
+                <button type="button" class="valores" onclick="selecionarValor(20)">R$20</button>
+                <button type="button" class="valores" onclick="selecionarValor(30)">R$30</button>
+                <button type="button" class="valores" onclick="selecionarValor(50)">R$50</button>
+                <button type="button" class="valores" onclick="selecionarValor(60)">R$60</button>
+                <button type="button" class="valores" onclick="selecionarValor(100)">R$100</button>
+              </div>
+              <div id="outroValor">
+                <p id="outroValor-p">Ou escolha outro valor:</p>
+                <input type="number" id="outroValor-input" placeholder="R$">
+                <button type="button" id="enviarDoacao" onclick="doar()">Doar agora!</button>
+                <div id="mensagemAgradecimento" class="mensagem-agradecimento"></div>
+              </div>
             </div>
-            <div id="outroValor">
-              <p id="outroValor-p">Ou escolha outro valor:</p>
-              <input type="number" id="outroValor-input" placeholder="R$">
-              <button type="button" id="enviarDoacao" onclick="doar()">Doar agora!</button>
-              <div id="mensagemAgradecimento" class="mensagem-agradecimento"></div>
+            <div id="div-doacao-mensal">
+              <p id="recado-cadastro"><strong>Oba!</strong> Realize seu cadastro e torne-se um doador mensal da <span>Educar para libertar!</span></p>
+              <a href="#" target="_blank" id="cadastro-doacao"><p id="txt-cadastro-doacao">Seja um doador mensal ></p></a>
             </div>
           </div>
       </section>

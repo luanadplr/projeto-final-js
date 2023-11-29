@@ -45,3 +45,29 @@ function exibirMensagemAgradecimento(mensagem) {
         divMensagem.style.display = "none";
     }, 5000); // A mensagem será removida após 5 segundos (5000 milissegundos)
 }
+
+
+// Função para alterar o tipo de doação do usuário
+function selecionarPeriodo(){
+
+    let periodoDoacao = document.querySelector("#periodo")
+
+    // opcoesPeriodo recebe o >value< da opção selecionada definida no HTML
+    let opcoesPeriodo = periodoDoacao.options[periodoDoacao.selectedIndex].value
+
+    let divDoacaoMensal = document.querySelector("#div-doacao-mensal")
+    let divDoacaoUnica = document.querySelector("#div-doacao-unica")
+    
+    if(opcoesPeriodo == "mensal"){  // Mostrar a div de doação Mensal
+        
+        divDoacaoMensal.style.display = "block"
+        divDoacaoUnica.style.display = "none"
+
+    } else { // Mostrar a div de doação Única
+
+        divDoacaoMensal.style.display = "none"
+        divDoacaoUnica.style.display = "block"
+
+    }
+
+}

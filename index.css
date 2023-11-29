@@ -21,6 +21,12 @@ html {
 
 }
 
+#div-doacao-mensal{
+
+    display: none;
+
+}
+
 
 /*    CABEÇALHO            */ 
 
@@ -121,7 +127,6 @@ html {
     grid-area: div;
     background-color: rgba(0, 0, 0, 0.742);
     border-radius: 7px;
-    /* margin: 150px 0 50px 100px; */
     width: 25em;
     height: 30em;
 
@@ -159,6 +164,8 @@ html {
     margin-top: 25px;
 
 }
+
+/*  DOAÇÃO ÚNICA   */
 
 #valorDoacao{
 
@@ -247,6 +254,44 @@ html {
     padding:10px;
     text-transform: uppercase;
     font-size: 15px;
+
+}
+
+
+/*  DOAÇÃO MENSAL - CADASTRO    */
+
+#recado-cadastro{
+
+    color: white;
+    padding: 20px;
+    font-size:25px;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+span{
+
+    background-color: yellow;
+    color: black;
+    font-weight: 700;
+
+}
+
+#cadastro-doacao{
+
+    text-decoration: none;
+
+}
+
+#txt-cadastro-doacao{
+
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    margin-top: 50px;
+    text-align: center;  
 
 }
 
