@@ -20,7 +20,7 @@ function doar() {
     // Exibir mensagem de agradecimento
     // alert(`Agradecemos pela sua doação de R$${valorDoacao}! Seu apoio faz a diferença.`);
     // Exibir mensagem de agradecimento no HTML
-    exibirMensagemAgradecimento(`Agradecemos pela sua doação de R$${valorDoacao}! Seu apoio faz a diferença.`);
+    exibirMensagemAgradecimento(`<strong>Agradecemos pela sua doação de R$${valorDoacao}!</strong><br>Seu apoio faz a diferença.`);
     
 }
 

@@ -18,7 +18,6 @@
    <div id="pagina-principal-secao1">
       <header class="cabecalho">
         <nav id="cabecalho-menu">
-          <!-- <p id="texto-menu">Sua doação salvará vidas, doe agora ou torne-se um benfeitor!</p> -->
           <ul id="menu-lista">
             <li class="menu-li"><a href="#pagina-principal-secao3" class="link-menu">porque doar?</a></li>
             <li class="menu-li"><a href="#" target="_blank" class="link-menu">seja um voluntário</a></li>
@@ -30,11 +29,11 @@
             <h2 id="h2-principal">Educar<br>para libertar!</h2>
           </div>
           <div id="doacao">
-            <p id="periodoDoacao-p">Escolha sua contribuição:</p>
+            <p id="periodoDoacao-p">Ajude com sua doação:</p>
             <div id="periodoDoacao">
               <select name="periodoDoacao" id="periodo">
-                <option value="mensal">Mensal</option>
                 <option value="anual">Única</option>
+                <option value="mensal">Mensal</option>
               </select>
             </div>
             <div id="valorDoacao">
@@ -46,7 +45,7 @@
               <button type="button" class="valores" onclick="selecionarValor(100)">R$100</button>
             </div>
             <div id="outroValor">
-              <p id="outroValor-p">Outro valor:</p>
+              <p id="outroValor-p">Ou escolha outro valor:</p>
               <input type="number" id="outroValor-input" placeholder="R$">
               <button type="button" id="enviarDoacao" onclick="doar()">Doar agora!</button>
               <div id="mensagemAgradecimento" class="mensagem-agradecimento"></div>

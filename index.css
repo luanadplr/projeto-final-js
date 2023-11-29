@@ -132,7 +132,12 @@ html {
     text-align: center;
     color: white;
     font-weight: 700;
-    margin-top: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    text-decoration-thickness: 5px;
+    text-decoration-color: yellow;
+    margin-top:40px;
 
 }
 
@@ -140,16 +145,18 @@ html {
 
     display: flex;
     justify-content: center;
-    margin-top: 10px;
 
 }
 
 #periodo{
 
     padding: 2px 10px 2px 10px;
-    width: 10em;
+    width: 15em;
+    height: 2.5em;
     border: thin solid rgba(0, 0, 0, 0.19);
     font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    margin-top: 25px;
 
 }
 
@@ -158,6 +165,8 @@ html {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    margin-top: 10px;
+    margin-bottom:15px;
 
 }
 
@@ -165,7 +174,6 @@ html {
 
     background: none;
     border: thin solid white;
-    border-radius: 10px;
     color: white;
     width: 10em;
     padding: 10px;
@@ -213,26 +221,33 @@ html {
     width: 15em;
     padding: 15px;
     font-weight: 700;
-    border: thin solid black;
-    background-color: rgba(0, 0, 0, 0.308);
-    color: white;
+    background-color: rgb(0, 0, 0);
+    color: yellow;
+    border:none;
+    text-transform: uppercase;
+    font-size: 12px;
     
 
 }
 
 #enviarDoacao:hover{
 
-    background-color: rgba(255, 255, 0, 0.837);
+    background-color: rgb(255, 255, 0);
     color: black;
 
 }
 
 .mensagem-agradecimento {
+
     display: none; /* Inicialmente, oculta a mensagem */
     background-color: #4CAF50;
     color: white;
     padding: 10px;
-    border-radius: 5px;
+    margin-top:15px;
+    padding:10px;
+    text-transform: uppercase;
+    font-size: 15px;
+
 }
 
 
