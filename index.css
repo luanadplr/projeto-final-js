@@ -107,16 +107,6 @@ html {
 
     font-size: 500%;
     font-weight: 700;
-    color: black;
-    text-decoration-line: underline;
-    text-decoration-thickness: 10px;
-    text-decoration-color: yellow;
-    transition: background 1s, color 1s;
-
-}
-
-#h2-principal:hover{
-
     background-color: yellow;
     color: black;
 
