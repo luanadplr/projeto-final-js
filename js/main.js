@@ -11,7 +11,7 @@ function doar() {
     if (isNaN(valorDoacao) || valorDoacao <= 0) {
         alert("Por favor, insira um valor válido para a doação.");
         return;
-        
+
     }
 
     // Salvar o valor da doação (você pode enviar esse valor para um servidor aqui)
@@ -23,7 +23,7 @@ function doar() {
     exibirMensagemAgradecimento(`<strong>Agradecemos pela sua doação de R$${valorDoacao}!</strong><br>Seu apoio faz a diferença.`);
 
     document.getElementById("outroValor-input").value = "";
-    
+
 }
 
 function exibirMensagemAgradecimento(mensagem) {
@@ -50,7 +50,7 @@ function exibirMensagemAgradecimento(mensagem) {
 
 
 // Função para alterar o tipo de doação do usuário
-function selecionarPeriodo(){
+function selecionarPeriodo() {
 
     let periodoDoacao = document.querySelector("#periodo")
 
@@ -59,9 +59,9 @@ function selecionarPeriodo(){
 
     let divDoacaoMensal = document.querySelector("#div-doacao-mensal")
     let divDoacaoUnica = document.querySelector("#div-doacao-unica")
-    
-    if(opcoesPeriodo == "mensal"){  // Mostrar a div de doação Mensal
-        
+
+    if (opcoesPeriodo == "mensal") {  // Mostrar a div de doação Mensal
+
         divDoacaoMensal.style.display = "block"
         divDoacaoUnica.style.display = "none"
 
@@ -72,4 +72,20 @@ function selecionarPeriodo(){
 
     }
 
+}
+
+//Animação do Formulário
+var x = document.getElementById("login");
+var y = document.getElementById("register");
+var z = document.getElementById("btn");
+
+function register() {
+    x.style.left = "-400px";
+    y.style.left = "50px";
+    z.style.left = "110px";
+}
+function login() {
+    x.style.left = "50px";
+    y.style.left = "450px";
+    z.style.left = "0px";
 }
