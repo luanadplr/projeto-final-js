@@ -31,26 +31,21 @@ html {
 /*    CABEÇALHO            */
 
 .cabecalho {
-
     width: 100%;
     height: 0.01em;
     font-size: 12px;
     padding-top: 20px;
-
 }
 
 #cabecalho-menu {
-
     display: flex;
     align-items: center;
     justify-content: flex-end;
     height: 3em;
-
 }
 
 
 #menu-lista {
-
     display: flex;
     flex-flow: row wrap;
     margin-right: 30px;
@@ -61,30 +56,24 @@ html {
 
     padding: 20px;
     text-transform: uppercase;
-
 }
 
 .link-menu {
-
     font-size: 13px;
     text-decoration: none;
     color: black;
     background-color: yellow;
     font-weight: 700;
-
 }
 
 .link-menu:hover {
-
     color: black;
     background: none;
     border-bottom: 3px solid yellow;
-
 }
 
 
 /*  MAIN          */
-
 .section1 {
     height: 50em;
     display: grid;
@@ -93,18 +82,14 @@ html {
         'texto div';
     align-items: center;
     justify-items: center;
-
 }
 
 #texto-principal {
-
     grid-area: texto;
     text-align: justify;
-
 }
 
 #h2-principal {
-
     font-size: 500%;
     font-weight: 700;
     background-color: yellow;
@@ -119,11 +104,9 @@ html {
     border-radius: 7px;
     width: 25em;
     height: 30em;
-
 }
 
 #periodoDoacao-p {
-
     text-align: center;
     color: white;
     font-weight: 700;
@@ -133,18 +116,14 @@ html {
     text-decoration-thickness: 5px;
     text-decoration-color: yellow;
     margin-top: 40px;
-
 }
 
 #periodoDoacao {
-
     display: flex;
     justify-content: center;
-
 }
 
 #periodo {
-
     padding: 2px 10px 2px 10px;
     width: 15em;
     height: 2.5em;
@@ -152,23 +131,18 @@ html {
     font-family: 'Roboto', sans-serif;
     border-radius: 5px;
     margin-top: 25px;
-
 }
 
 /*  DOAÇÃO ÚNICA   */
-
 #valorDoacao {
-
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 15px;
-
 }
 
 .valores {
-
     background: none;
     border: thin solid white;
     color: white;
@@ -177,14 +151,11 @@ html {
     margin-top: 20px;
     margin-left: 10px;
     font-weight: 700;
-
 }
 
 .valores:hover {
-
     background-color: rgba(255, 255, 255, 0.29);
     cursor: pointer;
-
 }
 
 #outroValor {
@@ -205,15 +176,12 @@ html {
 }
 
 #outroValor-input {
-
     margin-top: 10px;
     border: none;
     padding: 10px;
-
 }
 
 #enviarDoacao {
-
     margin-top: 20px;
     width: 15em;
     padding: 15px;
@@ -223,8 +191,6 @@ html {
     border: none;
     text-transform: uppercase;
     font-size: 12px;
-
-
 }
 
 #enviarDoacao:hover {
@@ -235,7 +201,6 @@ html {
 }
 
 .mensagem-agradecimento {
-
     display: none;
     /* Inicialmente, oculta a mensagem */
     background-color: #4CAF50;
@@ -245,52 +210,40 @@ html {
     padding: 10px;
     text-transform: uppercase;
     font-size: 15px;
-
 }
 
 
 /*  DOAÇÃO MENSAL - CADASTRO    */
-
 #recado-cadastro {
-
     color: white;
     padding: 20px;
     font-size: 25px;
     text-align: center;
     margin-top: 50px;
-
 }
 
 span {
-
     background-color: yellow;
     color: black;
     font-weight: 700;
-
 }
 
 #cadastro-doacao {
-
     text-decoration: none;
-
 }
 
 #txt-cadastro-doacao {
-
     text-transform: uppercase;
     font-size: 11px;
     font-weight: 700;
     color: white;
     margin-top: 50px;
     text-align: center;
-
 }
 
 
 /*  SECTION 2     */
-
 #pagina-principal-secao2 {
-
     height: 10em;
     width: 100%;
     background-color: yellow;
@@ -298,11 +251,9 @@ span {
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-evenly;
-
 }
 
 .h2-quadros {
-
     display: inline-block;
     font-weight: 700;
     font-size: 25px;
@@ -311,46 +262,34 @@ span {
 }
 
 .icon-quadros {
-
     height: 50px;
-
 }
 
 /*  SECTION 3     */
-
 #pagina-principal-secao3 {
-
     height: 20em;
     padding: 50px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-
 }
 
 #secao3-ctn1 {
-
     width: 50%;
-
 }
 
-
 #p-secao3 {
-
     opacity: 60%;
     display: inline-block;
     font-size: 11px;
     text-transform: uppercase;
-
 }
 
 #texto-secao3 {
-
     padding-top: 10px;
     width: 55%;
     text-align: justify;
-
 }
 
 strong {
@@ -358,13 +297,10 @@ strong {
 }
 
 #seja-voluntario {
-
     text-decoration: none;
-
 }
 
 #txt-seja-voluntario {
-
     display: inline-block;
     text-transform: uppercase;
     font-size: 11px;
@@ -372,7 +308,6 @@ strong {
     color: black;
     border-bottom: 5px solid yellow;
     margin-top: 80px;
-
 }
 
 #seja-voluntario:hover {
@@ -380,24 +315,19 @@ strong {
 }
 
 .infos-secao3 {
-
     background-color: yellow;
     border-radius: 5px;
     padding: 30px;
     margin-top: 10px;
-
 }
 
 .underline {
-
     background: none;
     border: thin solid yellow;
-
 }
 
 
 /*  RODAPÉ      */
-
 .rodape {
     background-color: rgb(229, 229, 229);
     width: 100%;
@@ -409,16 +339,13 @@ strong {
 }
 
 #texto-rodape {
-
     grid-area: texto;
     font-size: 12px;
     margin: 30px;
     opacity: 60%;
-
 }
 
 /*   RESPONSIVIDADE     */
-
 @media only screen and (min-width:0) and (max-width:912px) {
     .section1 {
         grid-template-rows: 1fr;
