@@ -15,7 +15,7 @@ html {
 
 #pagina-principal-secao1 {
 
-    background-image: url("/img/page-bg.jpg");
+    background-image: url("./img/page-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
