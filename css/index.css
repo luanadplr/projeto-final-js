@@ -131,6 +131,7 @@ html {
     font-family: 'Roboto', sans-serif;
     border-radius: 5px;
     margin-top: 25px;
+    cursor: pointer;
 }
 
 /*  DOAÇÃO ÚNICA   */
@@ -191,6 +192,7 @@ html {
     border: none;
     text-transform: uppercase;
     font-size: 12px;
+    cursor: pointer;
 }
 
 #enviarDoacao:hover {
@@ -212,6 +214,60 @@ html {
     font-size: 15px;
 }
 
+
+#div-doacao-cadastro{ display: none; }
+
+#caixa-valor-doacao {
+
+    background-color: rgba(255, 255, 255, 0.834);
+    margin: 15px 40px 0 40px;
+    padding: 10px;
+
+}
+
+/* CADASTRO - DOAÇÃO      */
+
+#cadastro-formulario {
+
+    display: flex;
+    flex-flow: column wrap;
+    padding: 20px;
+    align-items: center;
+
+}
+
+.input-cadastro {
+
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    width: 300px;
+
+}
+
+.labelCadastro {
+
+    color: rgb(252, 80, 80);
+    font-size: 12px;
+    font-weight: 60px;
+    margin-bottom: 10px;
+
+}
+
+#btn-cadastro {
+
+    width: 15em;
+    padding: 15px;
+    font-weight: 700;
+    background-color: yellow;
+    color: black;
+    border: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+
+}
 
 /*  DOAÇÃO MENSAL - CADASTRO    */
 #recado-cadastro {

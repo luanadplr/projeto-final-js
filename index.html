@@ -5,13 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <title>Educar para libertar!</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/index.css" />
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.min.css" rel="stylesheet">
   <title>Educar para libertar!</title>
 </head>
 
@@ -49,7 +47,7 @@
           <div id="outroValor">
             <p id="outroValor-p">Ou escolha outro valor:</p>
             <input type="number" id="outroValor-input" placeholder="R$">
-            <button type="button" id="enviarDoacao" onclick="doar()">Doar agora!</button>
+            <button type="button" id="enviarDoacao" onclick="enviarDoacao()" class="abrirModalDoacao">Doar agora!</button>
             <div id="mensagemAgradecimento" class="mensagem-agradecimento"></div>
           </div>
         </div>
@@ -58,6 +56,22 @@
           <a href="#" target="_blank" id="cadastro-doacao">
             <p id="txt-cadastro-doacao">Seja um doador mensal ></p>
           </a>
+        </div>
+        <div id="div-doacao-cadastro">
+          <div id="caixa-valor-doacao">
+            <p class="valor-doacao">Valor doacao</p>
+          </div>
+          <form id="cadastro-formulario">
+            <input type="email" placeholder="E-mail*" id="cadastro-email" class="input-cadastro" required>
+            <label id="labelEmail" class="labelCadastro" for="cadastro-email"></label>
+            <input type="text" placeholder="Nome Completo*" class="input-cadastro" id="cadastro-nome" required>
+            <label id="labelNome" class="labelCadastro" for="cadastro-nome"></label>
+            <input type="txt" class="input-cadastro" id="cadastro-cpf" placeholder="CPF*" maxlength="11" required>
+            <label id="labelCPF" class="labelCadastro" for="cadastro-cpf"></label>
+            <input type="txt" class="input-cadastro" id="cadastro-telefone" placeholder="Telefone*" maxlength="11" required>
+            <label id="labelTel" class="labelCadastro" for="cadastro-telefone"></label>
+            <button onclick='enviarCadastro()' id="btn-cadastro">Continuar</button>
+          </form>
         </div>
       </div>
     </section>
@@ -91,5 +105,4 @@
   </footer>
   <script src="./js/main.js"></script>
 </body>
-
 </html>
