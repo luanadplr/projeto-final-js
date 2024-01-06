@@ -8,13 +8,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/index.css" />
+  <script src="https://kit.fontawesome.com/6733b5d38a.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.all.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <title>Educar para libertar!</title>
 </head>
 
 <body>
   <div id="pagina-principal-secao1">
+
+  <!-- CABEÇALHO -->
+
     <header class="cabecalho">
       <nav id="cabecalho-menu">
         <ul id="menu-lista">
@@ -23,75 +28,141 @@
         </ul>
       </nav>
     </header>
+
+  <!-- MAIN -->
+
     <section class="section1">
       <div id="texto-principal">
         <h2 id="h2-principal">Educar<br>para libertar!</h2>
       </div>
+
+    <!-- AREA DE DOAÇÃO  -->
+
       <div id="doacao">
-        <p id="periodoDoacao-p">Ajude com sua doação:</p>
-        <div id="periodoDoacao">
-          <select name="periodoDoacao" id="periodo" onchange="selecionarPeriodo()">
-            <option value="unica">Única</option>
-            <option value="mensal">Mensal</option>
-          </select>
-        </div>
-        <div id="div-doacao-unica">
-          <div id="valorDoacao">
-            <button type="button" class="valores" onclick="selecionarValor(15)">R$15</button>
-            <button type="button" class="valores" onclick="selecionarValor(20)">R$20</button>
-            <button type="button" class="valores" onclick="selecionarValor(30)">R$30</button>
-            <button type="button" class="valores" onclick="selecionarValor(50)">R$50</button>
-            <button type="button" class="valores" onclick="selecionarValor(60)">R$60</button>
-            <button type="button" class="valores" onclick="selecionarValor(100)">R$100</button>
+        <div id="doacao-div1">
+          <p id="periodoDoacao-p">Ajude com sua doação:</p>
+          <div id="periodoDoacao">
+            <select name="periodoDoacao" id="periodo" onchange="selecionarPeriodo()">
+              <option value="unica">Única</option>
+              <option value="mensal">Mensal</option>
+            </select>
           </div>
-          <div id="outroValor">
-            <p id="outroValor-p">Ou escolha outro valor:</p>
-            <input type="number" id="outroValor-input" placeholder="R$">
-            <button type="button" id="enviarDoacao" onclick="enviarDoacao()" class="abrirModalDoacao">Doar agora!</button>
-            <div id="mensagemAgradecimento" class="mensagem-agradecimento"></div>
+
+        <!-- DOAÇÃO ÚNICA  -->
+
+          <div id="div-doacao-unica">
+            <div id="valorDoacao">
+              <button type="button" class="valores" onclick="selecionarValor(15)">R$15</button>
+              <button type="button" class="valores" onclick="selecionarValor(20)">R$20</button>
+              <button type="button" class="valores" onclick="selecionarValor(30)">R$30</button>
+              <button type="button" class="valores" onclick="selecionarValor(50)">R$50</button>
+              <button type="button" class="valores" onclick="selecionarValor(60)">R$60</button>
+              <button type="button" class="valores" onclick="selecionarValor(100)">R$100</button>
+            </div>
+            <div id="outroValor">
+              <p id="outroValor-p">Ou escolha outro valor:</p>
+              <input type="number" id="outroValor-input" placeholder="R$">
+              <button type="button" id="enviarDoacao" onclick="enviarDoacao()" class="btn-enviarDoacao">
+                Doar agora <i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+
+        <!-- DOAÇÃO MENSAL  -->
+
+          <div id="div-doacao-mensal">
+            <div id="valorDoacaoMensal">
+              <h2 class="h2">Escolha um valor:</h2>
+              <input type="radio" name="valorMensal" id="valorMensal1" class="radioMensal" value="30">
+              <label for="valorMensal1" class="valoresMensal">R$30</label>
+              <input type="radio" name="valorMensal" id="valorMensal2" class="radioMensal" value="50">
+              <label for="valorMensal2" class="valoresMensal">R$50</label>
+              <input type="radio" name="valorMensal" id="valorMensal3" class="radioMensal" value="80">
+              <label for="valorMensal3" class="valoresMensal">R$80</label>
+              <button type="button" class="btn-enviarDoacao" onclick="enviarDoacaoMensal()">
+                Doar agora <i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+
+        <!-- AREA DE CADASTRO E PAGAMENTO  -->
+
+          <div id="div-doacao-cadastro">
+            <div id="caixa-valor-doacao">
+              <p class="valor-doacao"></p>
+            </div>
+              <form id="cadastro-formulario">
+                <input type="email" placeholder="E-mail*" id="cadastro-email" class="input-cadastro" required>
+                <label id="labelEmail" class="labelCadastro" for="cadastro-email"></label>
+                <input type="text" placeholder="Nome Completo*" class="input-cadastro" id="cadastro-nome" required>
+                <label id="labelNome" class="labelCadastro" for="cadastro-nome"></label>
+                <input type="txt" class="input-cadastro" id="cadastro-cpf" placeholder="CPF*" maxlength="11" required>
+                <label id="labelCPF" class="labelCadastro" for="cadastro-cpf"></label>
+                <input type="txt" class="input-cadastro" id="cadastro-telefone" placeholder="Telefone*" maxlength="11" required>
+                <label id="labelTel" class="labelCadastro" for="cadastro-telefone"></label>
+              </form>
+              <container id="btn"><button onclick='validarCadastro()' id="btn-cadastro">
+                Continuar <i class="fa-solid fa-angle-right"></i></button></container>
+          </div>
+
+          <!-- PAGAMENTO  -->
+
+          <div id="div-doacao-pagamento">
+            <p class="valor-doacao"></p>
+            <h2 class="h2 h2-formapagamento">Escolha a forma de pagamento:</h2>
+            <form id="pgmt-formulario">
+              <input type="radio" name="formaPgt" id="pix-formaPgt" class="radio-formaPgt" value="pix">
+              <label for="pix-formaPgt" class="label-formaPgt">
+                <div class="radio-btn"></div>
+                <span class="radio-span">Pix</span>
+              </label>
+              <input type="radio" name="formaPgt" id="cartao-formaPgt" class="radio-formaPgt" value="cartao">
+              <label for="cartao-formaPgt" class="label-formaPgt">
+                <div class="radio-btn"></div>
+                <span class="radio-span">Cartão</span>
+              </label>
+            </form>
+            <div id="pgtPix">
+              <div id="divCentralizar">
+                <h2 id="recadoPix"></h2>
+                <img src="./img/qrcode.jpg" alt="Qr Code" id="qrcode">
+                <button type="button" onclick="copiarCodigo()" id="btnCopiar">
+                  <i class="fa-regular fa-copy"></i> Copiar
+                </button>
+              </div>
+            </div>
+            <div id="pgtCartao">
+              <p id="recado-cadastro"></p>
+              <div id="centralizarLink"><a href="#doacao" id="pgtCartao-link" onclick="enviarCadastro()"></a></div>
+            </div>
           </div>
         </div>
-        <div id="div-doacao-mensal">
-          <p id="recado-cadastro"><strong>Oba!</strong> Realize seu cadastro e torne-se um doador mensal da <span>Educar para libertar!</span></p>
-          <a href="#" target="_blank" id="cadastro-doacao">
-            <p id="txt-cadastro-doacao">Seja um doador mensal ></p>
-          </a>
+        <div id="doacao-div2">
+          <button type="button" id="voltarTela"><i class="fa-solid fa-repeat"></i> Reiniciar</button>
         </div>
-        <div id="div-doacao-cadastro">
-          <div id="caixa-valor-doacao">
-            <p class="valor-doacao">Valor doacao</p>
-          </div>
-          <form id="cadastro-formulario">
-            <input type="email" placeholder="E-mail*" id="cadastro-email" class="input-cadastro" required>
-            <label id="labelEmail" class="labelCadastro" for="cadastro-email"></label>
-            <input type="text" placeholder="Nome Completo*" class="input-cadastro" id="cadastro-nome" required>
-            <label id="labelNome" class="labelCadastro" for="cadastro-nome"></label>
-            <input type="txt" class="input-cadastro" id="cadastro-cpf" placeholder="CPF*" maxlength="11" required>
-            <label id="labelCPF" class="labelCadastro" for="cadastro-cpf"></label>
-            <input type="txt" class="input-cadastro" id="cadastro-telefone" placeholder="Telefone*" maxlength="11" required>
-            <label id="labelTel" class="labelCadastro" for="cadastro-telefone"></label>
-            <button onclick='enviarCadastro()' id="btn-cadastro">Continuar</button>
-          </form>
-        </div>
-      </div>
+    </div>
     </section>
   </div>
+
+  <!-- SEÇÃO 2 - Nº DE DOAÇÕES -->
+
   <div id="pagina-principal-secao2">
     <container class="quadros">
       <img src="img/icon-doacao.png" class="icon-quadros">
-      <h2 class="h2-quadros">Recebemos R$ 0,00<br>em doações.</h2>
+      <h2 class="h2-quadros" id="quantDoacoes">Recebemos R$ 0,00<br>em doações.</h2>
     </container>
     <container class="quadros">
       <img src="img/icon-livro.png" class="icon-quadros">
       <h2 class="h2-quadros">Mais de 1.250 crianças<br>nas salas de aulas.</h2>
     </container>
   </div>
+
+  <!-- SEÇÃO 3 - PORQUE DOAR? -->
+
   <div id="pagina-principal-secao3">
     <container id="secao3-ctn1">
       <p id="p-secao3" class="txt-secao3">Porque doar?</p>
       <div id="texto-secao3" class="txt-secao3">A ONG <strong>Educar para Libertar!</strong> é uma organização civil, filantrópica, que promove educação integral, cultura, esportes, apoio à profissionalização, cuidados básicos de saúde e de assistência social às famílias com maior nível de desestruturação das comunidades.</div>
       <a href="cadastro.html" id="seja-voluntario">
-        <p id="txt-seja-voluntario">Seja um voluntário ></p>
+        <p id="txt-seja-voluntario">Seja um voluntário <i class="fa-solid fa-angle-right"></i></p>
       </a>
     </container>
     <container id="secao3-ctn2">
@@ -100,9 +171,16 @@
       <div class="infos-secao3 underline"><strong>432</strong> vagas da Educação Infantil ao Ensino Médio</div>
     </container>
   </div>
+
+  <!-- RODAPÉ -->
+
   <footer class="rodape">
     <p id="texto-rodape">ONG ficticia criada para o projeto final do curso de Javascript da Coderhouse. Projeto sem fins lucrativos usado apenas para estudo e portfólio.</p>
   </footer>
+
+  <!-- JS -->
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>

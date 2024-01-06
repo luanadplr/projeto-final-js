@@ -13,6 +13,7 @@ html {
     scroll-margin-top: .8em;
 }
 
+
 #pagina-principal-secao1 {
 
     background-image: url("../img/page-bg.jpg");
@@ -21,14 +22,9 @@ html {
 
 }
 
-#div-doacao-mensal {
-
-    display: none;
-
-}
-
-
-/*    CABEÇALHO            */
+/*
+   CABEÇALHO            
+*/
 
 .cabecalho {
     width: 100%;
@@ -36,6 +32,8 @@ html {
     font-size: 12px;
     padding-top: 20px;
 }
+
+/* CABEÇALHO - MENU */
 
 #cabecalho-menu {
     display: flex;
@@ -72,8 +70,44 @@ html {
     border-bottom: 3px solid yellow;
 }
 
+/* */
 
-/*  MAIN          */
+/*
+   MAIN
+*/
+
+.mensagem-agradecimento {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+#voltarTela {
+
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    display: none;
+    margin-bottom:10px;
+
+}
+
+.h2 {
+
+    color: white;
+    text-align: center;
+    font-weight: 700;
+
+}
+
+/* INICIO - TITULO | DIV - DOAÇÃO */
+
 .section1 {
     height: 50em;
     display: grid;
@@ -104,6 +138,9 @@ html {
     border-radius: 7px;
     width: 25em;
     height: 30em;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
 }
 
 #periodoDoacao-p {
@@ -134,7 +171,28 @@ html {
     cursor: pointer;
 }
 
-/*  DOAÇÃO ÚNICA   */
+.btn-enviarDoacao {
+    margin-top: 20px;
+    width: 15em;
+    padding: 15px;
+    font-weight: 700;
+    background-color: rgb(0, 0, 0);
+    color: yellow;
+    border: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-enviarDoacao:hover {
+
+    background-color: rgb(255, 255, 0);
+    color: black;
+
+}
+
+/*  PERÍODO DOAÇÃO ÚNICA   */
+
 #valorDoacao {
     display: flex;
     flex-flow: row wrap;
@@ -154,9 +212,11 @@ html {
     font-weight: 700;
 }
 
-.valores:hover {
+.valores:hover , .valoresMensal:hover {
+
     background-color: rgba(255, 255, 255, 0.29);
     cursor: pointer;
+
 }
 
 #outroValor {
@@ -182,56 +242,71 @@ html {
     padding: 10px;
 }
 
-#enviarDoacao {
-    margin-top: 20px;
-    width: 15em;
-    padding: 15px;
-    font-weight: 700;
-    background-color: rgb(0, 0, 0);
-    color: yellow;
-    border: none;
-    text-transform: uppercase;
-    font-size: 12px;
-    cursor: pointer;
-}
+/*  PERÍODO DOAÇÃO MENSAL  */
 
-#enviarDoacao:hover {
+#div-doacao-mensal {
 
-    background-color: rgb(255, 255, 0);
-    color: black;
-
-}
-
-.mensagem-agradecimento {
     display: none;
-    /* Inicialmente, oculta a mensagem */
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    margin-top: 15px;
-    padding: 10px;
-    text-transform: uppercase;
-    font-size: 15px;
+
 }
+
+#valorDoacaoMensal {
+
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    padding: 20px;
+
+}
+
+.radioMensal {
+
+    position: absolute;
+    opacity: 0; height: 0; width: 0;
+
+}
+
+.valoresMensal {
+
+    background: none;
+    border: thin solid white;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+input[type=radio]:checked + .valoresMensal {
+
+    background-color: rgba(255, 255, 255, 0.29);
+    cursor: pointer;
+
+}
+
+
+/*  CADASTRO DO DOADOR  */
 
 
 #div-doacao-cadastro{ display: none; }
 
 #caixa-valor-doacao {
 
-    background-color: rgba(255, 255, 255, 0.834);
+    background-color: yellow;
     margin: 15px 40px 0 40px;
     padding: 10px;
 
 }
 
-/* CADASTRO - DOAÇÃO      */
-
 #cadastro-formulario {
 
     display: flex;
     flex-flow: column wrap;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     align-items: center;
 
 }
@@ -255,12 +330,14 @@ html {
 
 }
 
+#btn {display: flex; justify-content: center;}
+
 #btn-cadastro {
 
     width: 15em;
     padding: 15px;
     font-weight: 700;
-    background-color: yellow;
+    background-color: #ffff00;
     color: black;
     border: none;
     text-transform: uppercase;
@@ -269,7 +346,115 @@ html {
 
 }
 
-/*  DOAÇÃO MENSAL - CADASTRO    */
+/*  FORMA DE PAGAMENTO   */
+
+#div-doacao-pagamento {
+
+    display: none;
+
+}
+
+.h2-formapagamento {margin: 20px;}
+
+#pgmt-formulario {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.radio-formaPgt {
+
+    position: absolute;
+    opacity: 0; height: 0; width: 0;
+
+}
+
+.label-formaPgt {
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-right: 12px;
+    cursor: pointer;
+
+}
+
+.radio-btn {
+
+    height: 15px;
+    width: 15px;
+    border-radius: 100px;
+    border: 1px solid white;
+    display: block;
+    margin-right: 0.5rem;
+    content: '';
+
+}
+
+/* PIX */
+
+#divCentralizar {
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+}
+
+#pgtPix { margin-top: 10px;}
+
+#recadoPix {
+
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 20px 10px 20px;
+
+}
+
+#qrcode {
+
+    width: 150px;
+
+}
+
+#btnCopiar {
+
+    color: white;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    margin-top: 20px;
+
+}
+
+
+input[type=radio]:checked + .label-formaPgt .radio-btn {
+
+    background: radial-gradient(circle, white, white);
+
+}
+
+/* CARTÃO  */
+
+#centralizarLink {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#pgtCartao-link {
+
+    color: white;
+    text-decoration: none;
+
+}
+
+#pgtCartao-link:hover {text-decoration: underline;}
+
 #recado-cadastro {
     color: white;
     padding: 20px;
@@ -284,21 +469,10 @@ span {
     font-weight: 700;
 }
 
-#cadastro-doacao {
-    text-decoration: none;
-}
+/* 
+   SECTION 2 - Nº DE DOAÇÕES
+*/
 
-#txt-cadastro-doacao {
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 700;
-    color: white;
-    margin-top: 50px;
-    text-align: center;
-}
-
-
-/*  SECTION 2     */
 #pagina-principal-secao2 {
     height: 10em;
     width: 100%;
@@ -321,7 +495,10 @@ span {
     height: 50px;
 }
 
-/*  SECTION 3     */
+/*
+   SECTION 3 - PORQUE DOAR?
+*/
+
 #pagina-principal-secao3 {
     height: 20em;
     padding: 50px;
@@ -383,7 +560,10 @@ strong {
 }
 
 
-/*  RODAPÉ      */
+/*
+   RODAPÉ
+*/
+
 .rodape {
     background-color: rgb(229, 229, 229);
     width: 100%;
@@ -399,14 +579,4 @@ strong {
     font-size: 12px;
     margin: 30px;
     opacity: 60%;
-}
-
-/*   RESPONSIVIDADE     */
-@media only screen and (min-width:0) and (max-width:912px) {
-    .section1 {
-        grid-template-rows: 1fr;
-        grid-template-areas:
-            'texto'
-            'div';
-    }
 }

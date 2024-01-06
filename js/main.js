@@ -1,73 +1,10 @@
-function selecionarValor(valor) {
-    
-    // Atualizar o valor do campo "Outro valor" com o valor selecionado
-    document.getElementById("outroValor-input").value = valor;
 
-}
+// ALTERAR O PERÍODO DE DOAÇÃO SELECIONADO: ÚNICO OU MENSAL
+// ESCONDE A TELA DE CADASTRO E PAGAMENTO QUANDO SELECIONADO
 
+let divDoacaoCadastro = document.querySelector("#div-doacao-cadastro")
+let divDoacaoPgt = document.querySelector("#div-doacao-pagamento")
 
-function enviarDoacao() {
-
-
-    // Obter o valor do campo "Outro valor"
-    let valorDoacao = parseFloat(document.getElementById("outroValor-input").value);
-
-    let divDoacaoUnica = document.querySelector("#div-doacao-unica")
-    let divDoacaoCadastro = document.querySelector("#div-doacao-cadastro")
-    let pvalorDoacao = document.querySelector(".valor-doacao")
-
-    // Verificar se o valor é válido
-    if (isNaN(valorDoacao) || valorDoacao <= 0) {
-        alert("Por favor, insira um valor válido para a doação.");
-        return;
-
-    }
-
-    // Exibir mensagem de agradecimento
-    // alert(`Agradecemos pela sua doação de R$${valorDoacao}! Seu apoio faz a diferença.`);
-    // Exibir mensagem de agradecimento no HTML
-
-    /* 
-    
-    exibirMensagemAgradecimento(`<strong>Agradecemos pela sua doação de R$${valorDoacao}!</strong><br>Seu apoio faz a diferença.`);
-
-    */
-
-    
-
-    // Exibir a tela de cadastro do doador
-    divDoacaoUnica.style.display = "none"
-    divDoacaoCadastro.style.display = "block"
-    pvalorDoacao.innerHTML = `Valor da doação única: <strong>R$${valorDoacao}</strong>`
-
-
-}
-
-function exibirMensagemAgradecimento(mensagem) {
-
-    let divMensagem = document.getElementById("mensagemAgradecimento");
-
-    // Limpar mensagens anteriores
-    divMensagem.innerHTML = "";
-
-    // Adicionar a mensagem ao HTML
-    divMensagem.innerHTML = mensagem;
-
-    // Exibir a mensagem
-    divMensagem.style.display = "block";
-
-    // Ocultar a mensagem após alguns segundos (opcional)
-    setTimeout(function () {
-        // Limpar a mensagem após 5 segundos
-        divMensagem.innerHTML = "";
-        // Ocultar a mensagem novamente
-        divMensagem.style.display = "none";
-    }, 5000); // A mensagem será removida após 5 segundos (5000 milissegundos)
-
-}
-
-
-// Função para alterar o tipo de doação do usuário
 function selecionarPeriodo() {
 
     let periodoDoacao = document.querySelector("#periodo")
@@ -78,24 +15,94 @@ function selecionarPeriodo() {
     let divDoacaoMensal = document.querySelector("#div-doacao-mensal")
     let divDoacaoUnica = document.querySelector("#div-doacao-unica")
 
-    if (opcoesPeriodo == "mensal") {  // Mostrar a div de doação Mensal
+    if (opcoesPeriodo == "mensal") { 
 
         divDoacaoMensal.style.display = "block"
         divDoacaoUnica.style.display = "none"
 
-    } else { // Mostrar a div de doação Única
+    } else {
 
         divDoacaoMensal.style.display = "none"
         divDoacaoUnica.style.display = "block"
 
     }
 
-    let divDoacaoCadastro = document.querySelector("#div-doacao-cadastro")
     divDoacaoCadastro.style.display = "none"
+    divDoacaoPgt.style.display = "none"
+    btnVoltar.style.display = "none"
+    
+}
+
+
+/*
+  ENVIAR DOAÇÃO ÚNICA
+*/
+
+// FUNÇÃO PARA O INPUT RECEBER O VALOR SELECIONADO
+
+function selecionarValor(valor) {
+    
+    document.getElementById("outroValor-input").value = valor;
 
 }
 
-// Validando os dados do input
+// LER O VALOR DIGITADO NO INPUT
+// VERIFICAR SE O VALOR DIGITADO É UM NÚMERO VÁLIDO
+// ENVIAR PARA TELA DE CADASTRO DO DOADOR
+
+let divDoacaoUnica = document.querySelector("#div-doacao-unica")
+let pvalorDoacao = document.querySelector(".valor-doacao")
+
+function enviarDoacao() {
+
+    let valorDoacao = parseFloat(document.getElementById("outroValor-input").value);
+
+    if (isNaN(valorDoacao) || valorDoacao <= 0) {
+        alert("Por favor, insira um valor válido para a doação.");
+        return;
+
+    }
+
+    divDoacaoUnica.style.display = "none"
+    divDoacaoCadastro.style.display = "block"
+    pvalorDoacao.innerHTML = `Valor da doação: <strong>R$${valorDoacao}</strong>`
+
+}
+
+/*
+  ENVIAR DOAÇÃO MENSAL
+*/
+
+let opcoesMensal = document.getElementsByName("valorMensal")
+
+function enviarDoacaoMensal() {
+
+    let divDoacaoMensal = document.querySelector("#div-doacao-mensal")
+
+    divDoacaoUnica.style.display = "none"
+    divDoacaoCadastro.style.display = "block"
+    divDoacaoMensal.style.display = "none"
+
+    for (i = 0; i < opcoesMensal.length; i++) {
+        
+        if(opcoesMensal[i].checked){
+            pvalorDoacao.innerHTML = `Valor da doação: <strong>R$${opcoesMensal[i].value}</strong>`
+            document.getElementById("outroValor-input").value = opcoesMensal[i].value
+        }
+
+    }
+
+}
+
+
+//////////////////////////
+
+// VALIDAR OS DADOS DO FORMULÁRIO
+// ESCOLHER A FORMA DE PAGAMENTO
+// ENVIAR OS DADOS COLETADOS PARA O STORAGE
+
+//////////////////////////
+
 
 let email = document.querySelector("#cadastro-email")
 let labelEmail = document.querySelector("#labelEmail")
@@ -169,14 +176,68 @@ telefone.addEventListener('keyup', ()=>{
 
 })
 
-// Enviar os dados válidos e o valor da doação do doador para o storage
+let divPgtPix = document.querySelector("#pgtPix")
+let divPgtCartao = document.querySelector("#pgtCartao")
 
-function enviarCadastro() {
+function validarCadastro() {
 
     if(validEmail && validEmail && validCPF && validTel) {
 
-        let listaDoadores = JSON.parse(localStorage.getItem('listaDoadores') || '[]')
-        let doacao = document.getElementById("outroValor-input").value
+        divDoacaoCadastro.style.display = "none"
+        divDoacaoPgt.style.display = "block"
+
+        divPgtPix.style.display = "none"
+        divPgtCartao.style.display = "none"
+
+        let textoPgt = document.querySelector("#recadoPix")
+        textoPgt.innerHTML = `${nome.value}, scaneie o QR Code abaixo ou copie o código Pix para realizar o pagamento.`
+
+    } else { alert("Preencha os campos corretamente!") }
+
+}
+
+let btnVoltar = document.querySelector("#voltarTela")
+
+let divPix = document.querySelector("#pix-formaPgt")
+divPix.addEventListener('click', ()=>{
+    divPgtPix.style.display = "block"
+    divPgtCartao.style.display = "none"
+    btnVoltar.style.display = "block"
+})
+
+let divCartao = document.querySelector("#cartao-formaPgt")
+divCartao.addEventListener('click', ()=>{
+    divPgtPix.style.display = "none"
+    divPgtCartao.style.display = "block"
+    btnVoltar.style.display = "block"
+    let recado = document.querySelector("#recado-cadastro")
+    let link = document.querySelector("#pgtCartao-link")
+    recado.innerHTML = `<span>Olá, ${nome.value}!</span> Aperte no link para realizar o seu pagamento.`
+    link.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> Link`
+
+})
+
+function copiarCodigo(){
+
+    Toastify({
+        text: "Copiado para área de transferência", 
+        gravity: "top",
+        position: 'center',
+        style: {
+            background: '#ffff00',
+            color: '#000000'
+        },
+        duration: 3000
+    }).showToast();
+
+    enviarCadastro()
+
+}
+
+function enviarCadastro() {
+
+    let listaDoadores = JSON.parse(localStorage.getItem('listaDoadores') || '[]')
+    let doacao = document.getElementById("outroValor-input").value
 
         listaDoadores.push({
             nomeDoador: nome.value,
@@ -186,20 +247,30 @@ function enviarCadastro() {
             valorDoado: doacao
         })
 
-        localStorage.setItem('listaDoadores', JSON.stringify(listaDoadores))
+    localStorage.setItem('listaDoadores', JSON.stringify(listaDoadores))
 
-    } else { alert("Preencha os campos corretamente!") }
-
+    exibirMensagemAgradecimento()
 }
 
+btnVoltar.addEventListener('click', ()=>{
+    window.location.reload();
+})
+
+function exibirMensagemAgradecimento() {
+
+    Toastify({
+        text: "Agradecemos sua doação! Seu apoio faz a diferença", 
+        gravity: "top",
+        position: 'center',
+        style: {
+            background: '#AAFF00',
+            color: '#000000'
+        },
+        duration: 3000
+    }).showToast();
 
 
-
-
-
-
-
-
+}
 
 
 
