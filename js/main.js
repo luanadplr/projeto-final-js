@@ -250,6 +250,14 @@ function enviarCadastro() {
     localStorage.setItem('listaDoadores', JSON.stringify(listaDoadores))
 
     exibirMensagemAgradecimento()
+
+    // 
+    // ALTERAR O VALOR ACUMULADO NO SECTION 2
+    //
+
+    let valorTotal = document.querySelector("#quantDoacoes")
+    
+
 }
 
 btnVoltar.addEventListener('click', ()=>{
@@ -272,20 +280,27 @@ function exibirMensagemAgradecimento() {
 
 }
 
+// EXIBIR O CAMPO DE PREENCHIMENTO DE VOLUNTÁRIOS
 
 
-//Animação do Formulário
-var x = document.getElementById("login");
-var y = document.getElementById("register");
-var z = document.getElementById("btn");
-
-function register() {
-    x.style.left = "-400px";
-    y.style.left = "50px";
-    z.style.left = "110px";
-}
-function login() {
-    x.style.left = "50px";
-    y.style.left = "450px";
-    z.style.left = "0px";
+function sejaVoluntario() {
+    
+    Swal.fire({
+        title: "Seja um voluntário!",
+        text: "Entraremos em contato com você",
+        html: `
+        <input id="nome" class="swal2-input" type = "text" placeholder = "Seu nome" required>
+        <input id="e-mail" class="swal2-input" type = "email" placeholder = "Seu E-mail" required>
+        `,
+        confirmButtonText: "Enviar",
+        showCancelButton: true,
+        confirmButtonColor: "#ffff00"
+      }).then((result) => {
+        if(result.isConfirmed){
+            Swal.fire({
+                title: "E-mail cadastrado!",
+                confirmButtonColor: "#000000"
+            })
+        }
+      })
 }

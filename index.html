@@ -12,6 +12,8 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.all.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
   <title>Educar para libertar!</title>
 </head>
 
@@ -24,7 +26,7 @@
       <nav id="cabecalho-menu">
         <ul id="menu-lista">
           <li class="menu-li"><a href="#pagina-principal-secao3" class="link-menu">porque doar?</a></li>
-          <li class="menu-li"><a href="./cadastro.html" class="link-menu">seja um voluntário</a></li>
+          <li class="menu-li"><a class="link-menu seja__voluntario" onclick="sejaVoluntario()">seja um voluntário</a></li>
         </ul>
       </nav>
     </header>
@@ -161,7 +163,7 @@
     <container id="secao3-ctn1">
       <p id="p-secao3" class="txt-secao3">Porque doar?</p>
       <div id="texto-secao3" class="txt-secao3">A ONG <strong>Educar para Libertar!</strong> é uma organização civil, filantrópica, que promove educação integral, cultura, esportes, apoio à profissionalização, cuidados básicos de saúde e de assistência social às famílias com maior nível de desestruturação das comunidades.</div>
-      <a href="cadastro.html" id="seja-voluntario">
+      <a id="linkVoluntario" class="seja-voluntario" onclick="sejaVoluntario()">
         <p id="txt-seja-voluntario">Seja um voluntário <i class="fa-solid fa-angle-right"></i></p>
       </a>
     </container>
@@ -175,12 +177,14 @@
   <!-- RODAPÉ -->
 
   <footer class="rodape">
-    <p id="texto-rodape">ONG ficticia criada para o projeto final do curso de Javascript da Coderhouse. Projeto sem fins lucrativos usado apenas para estudo e portfólio.</p>
+    <p id="texto-rodape"><i class="fa-regular fa-copyright"></i> ONG fictícia criada para o projeto final do curso de Javascript da Coderhouse.
+      <br>Projeto sem fins lucrativos.</p>
   </footer>
 
   <!-- JS -->
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="./js/main.js"></script>
+
 </body>
 </html>

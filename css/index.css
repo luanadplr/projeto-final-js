@@ -529,8 +529,9 @@ strong {
     font-weight: 700;
 }
 
-#seja-voluntario {
+#linkVoluntario {
     text-decoration: none;
+    cursor: pointer;
 }
 
 #txt-seja-voluntario {
@@ -543,7 +544,7 @@ strong {
     margin-top: 80px;
 }
 
-#seja-voluntario:hover {
+#linkVoluntario:hover {
     background-color: yellow;
 }
 
@@ -577,6 +578,6 @@ strong {
 #texto-rodape {
     grid-area: texto;
     font-size: 12px;
-    margin: 30px;
+    margin: 40px 0 30px 60px;
     opacity: 60%;
 }
