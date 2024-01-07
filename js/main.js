@@ -281,26 +281,50 @@ function exibirMensagemAgradecimento() {
 }
 
 // EXIBIR O CAMPO DE PREENCHIMENTO DE VOLUNTÁRIOS
-
+// ARMAZENAR DADOS COLETADOS NO STORAGE
 
 function sejaVoluntario() {
-    
-    Swal.fire({
-        title: "Seja um voluntário!",
-        text: "Entraremos em contato com você",
-        html: `
-        <input id="nome" class="swal2-input" type = "text" placeholder = "Seu nome" required>
-        <input id="e-mail" class="swal2-input" type = "email" placeholder = "Seu E-mail" required>
-        `,
-        confirmButtonText: "Enviar",
-        showCancelButton: true,
-        confirmButtonColor: "#ffff00"
-      }).then((result) => {
-        if(result.isConfirmed){
-            Swal.fire({
-                title: "E-mail cadastrado!",
-                confirmButtonColor: "#000000"
-            })
-        }
-      })
+    (async () => {
+        const { value: formValues } = await Swal.fire({
+            title: "Seja um voluntário",
+            html: `
+                Entraremos em contato com você
+                <input id="nome" class="swal2-input" placeholder = "Seu nome">
+                <input id="email" class="swal2-input" placeholder = "Seu e-mail">
+            `,
+            confirmButtonText: "ENVIAR",
+            confirmButtonColor: "#FFFF00",
+            showCloseButton: true,
+            focusConfirm: false,
+            preConfirm: () => {
+              return [
+                document.getElementById("nome").value,
+                document.getElementById("email").value
+              ];
+            }
+          });
+          if (formValues) {
+            enviarEmailVoluntario(formValues[0], formValues[1])
+            Toastify({
+                text: `${formValues[0]}, seu cadastro foi enviado com sucesso!`, 
+                gravity: "top",
+                position: 'center',
+                style: {
+                    background: '#AAFF00',
+                    color: '#000000'
+                },
+                duration: 3000
+            }).showToast();
+          }
+      })()
+}
+
+function enviarEmailVoluntario(nome, email) {
+    let listaVoluntarios = JSON.parse(localStorage.getItem('listaVoluntarios') || '[]')
+        listaVoluntarios.push({
+            nomeVoluntario: nome,
+            emailVoluntario: email
+        })
+    localStorage.setItem('listaVoluntarios', JSON.stringify(listaVoluntarios))
+
 }
