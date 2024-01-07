@@ -94,7 +94,6 @@ function enviarDoacaoMensal() {
 
 }
 
-
 //////////////////////////
 
 // VALIDAR OS DADOS DO FORMULÁRIO
@@ -238,12 +237,15 @@ function enviarCadastro() {
 
     let listaDoadores = JSON.parse(localStorage.getItem('listaDoadores') || '[]')
     let doacao = document.getElementById("outroValor-input").value
+    let periodoDoacao = document.querySelector("#periodo")
+    let periodo = periodoDoacao.options[periodoDoacao.selectedIndex].value
 
         listaDoadores.push({
             nomeDoador: nome.value,
             emailDoador: email.value,
             cpfDoador: cpf.value,
             telefoneDoador: telefone.value,
+            tipoDoacao: periodo,
             valorDoado: doacao
         })
 
@@ -251,14 +253,37 @@ function enviarCadastro() {
 
     exibirMensagemAgradecimento()
 
-    // 
-    // ALTERAR O VALOR ACUMULADO NO SECTION 2
-    //
+    // ADICIONAR O NOVO VALOR DA DOAÇÃO NO ARRAY
+    // PARA SOMAR COM OS VALORES ARMAZENADOS
 
-    let valorTotal = document.querySelector("#quantDoacoes")
-    
+    valores.push(Number(doacao))
+    console.log(valores)
 
 }
+
+// 
+// ALTERAR O VALOR ACUMULADO PARA EXIBIR NO SECTION 2
+//
+
+let valorTotal = document.querySelector("#quantDoacoes")
+
+const doacoes = JSON.parse(localStorage.getItem('listaDoadores'))
+const valores = []
+doacoes.forEach(function valor(doacao){
+    valores.push(Number(doacao.valorDoado))
+})
+        
+let somaDoacoes = 0
+for(var i = 0; i<valores.length; i++){
+    somaDoacoes+=valores[i]
+}
+        
+valorTotal.innerHTML = `Recebemos ${somaDoacoes.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}<br>em doações.`
+
+//////////////////
+
+// REINICIAR A DOAÇÃO AO CLICAR O BOTÃO
+// EXIBIR MENSAGEM DE AGRADECIMENTO NO FINAL DA TRANSIÇÃO
 
 btnVoltar.addEventListener('click', ()=>{
     window.location.reload();
